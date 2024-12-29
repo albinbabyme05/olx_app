@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Logo from '../../olx-logo.png';
+import Logo from '../../../assets/images/olx-logo.svg';
 import './Signup.css';
 
 export default function Signup() {
