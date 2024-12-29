@@ -3,17 +3,19 @@ import React, { useState, useContext } from 'react';
 import Logo from '../../../assets/images/olx-logo.svg';
 import './Login.css';
 import { FirebaseContext } from '../../store/FirebaseContext';
+import {useHistory} from 'react-router-dom'
 
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const {firebase} = useContext(FirebaseContext)
+  const history = useHistory()
 
   const handleLogin = (e)=>{
     e.preventDefault()
     firebase.auth().signInWithEmailAndPassword(email, password).then(()=>{
-      alert("Logged In")
+      history.push('/')
     }).catch((err)=>{
       alert(err.message)
     })
