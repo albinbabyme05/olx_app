@@ -8,11 +8,14 @@ import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
 
 import {useContext} from 'react';
-import { AuthContext } from '../../store/FirebaseContext';
+import { AuthContext, FirebaseContext } from '../../store/FirebaseContext';
+import { useHistory } from 'react-router-dom';
+
 
 function Header() {
   const {user} = useContext(AuthContext)
-
+  const {firebase} = useContext(FirebaseContext)
+  const history = useHistory()
 
   return (
     <div className="headerParentDiv">
@@ -45,7 +48,11 @@ function Header() {
           <hr />
           
         </div>
-        {user && <span>Logout</span>}
+        {user && <span onClick={()=>{
+          firebase.auth().signOut();
+          history.push('/login')
+        }}>Logout</span>}
+
         <div className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">
