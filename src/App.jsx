@@ -11,10 +11,10 @@ function App() {
   return (
     <div>
       <Router>
-        <Route path='/'>
+        <Route exact path='/'>
           <Home />
         </Route>
-        <Route path='/signup'>
+        <Route  path='/signup'>
           <Signup />
         </Route>
       </Router>
