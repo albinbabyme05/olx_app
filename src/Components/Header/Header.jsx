@@ -7,9 +7,13 @@ import Arrow from '../../assets/Arrow';
 import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
 
-
+import {useContext} from 'react';
+import { AuthContext } from '../../store/FirebaseContext';
 
 function Header() {
+  const {user} = useContext(AuthContext)
+
+
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
@@ -36,11 +40,12 @@ function Header() {
           <span> ENGLISH </span>
           <Arrow></Arrow>
         </div>
-        <div className="loginPage">
-          <span>Login</span>
+        <div className="loginPage">              
+          <span>{user ? `Welcome ${user.displayName}` : 'Login'}</span>
           <hr />
+          
         </div>
-
+        {user && <span>Logout</span>}
         <div className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">

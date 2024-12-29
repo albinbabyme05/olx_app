@@ -17,7 +17,7 @@ export default function Signup() {
     e.preventDefault()
     console.log(firebase);
     firebase.auth().createUserWithEmailAndPassword(email, password).then((result)=>{
-      result.user.updateProfile({dsiplayName:user}).then(()=>{
+      result.user.updateProfile({displayName : user}).then(()=>{
         firebase.firestore().collection('users').add({
           id : result.user.uid,
           username : user,
