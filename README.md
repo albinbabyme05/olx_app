@@ -31,7 +31,7 @@ Before you begin, ensure you have the following installed:
 1. Clone the Repository
 -->git clone <repository-url>
 -->cd olx_clone_app
-   ![olx_app](https://github.com/user-attachments/assets/13e381b3-4ea1-48c1-b53d-bc67a0669d1c)
+   
 
 3. Install Dependencies
 -->npm install
@@ -47,3 +47,5 @@ Before you begin, ensure you have the following installed:
 -->npm run dev
 --> Access the app at: http://localhost:5173/
 -----------******************-----------
+
+![olx_app](https://github.com/user-attachments/assets/13e381b3-4ea1-48c1-b53d-bc67a0669d1c)
